@@ -6,6 +6,13 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+        Function to read JSON datafile, and load song and artist data into song_data and artist_data
+        Arguments:
+        cur: Database Cursor
+        filepath: location of JSON files
+        Return: None
+    """
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -19,6 +26,13 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+       Function to read JSON Logs and load data for time, user and songplay into postgres tables- time, user, songplay
+        Arguments:
+        cur: Database Cursor
+        filepath: location of Log files
+        Return: None
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
