@@ -42,3 +42,16 @@ etl.ipynb, a Jupyter notebook is given to develop ETL processes for each table. 
 <b>etl.ipynb </b>reads and processes files from song_data and log_data and loads them into the tables.
 
 <b>sql_queries.py </b>contains all the sql queries and is imported into the files above
+
+<h2> Project Execution Steps</h2>
+
+<b>Create Tables</b>
+
+    Write CREATE statements in sql_queries.py to create each table.
+    Write DROP statements in sql_queries.py to drop each table if it exists.
+    Run create_tables.py to create your database and tables.
+    Run test.ipynb to confirm the creation of your tables with the correct columns. Make sure to click "Restart kernel" to close the connection to the database after running this notebook.
+
+<b>ETL Pipeline</b>
+
+Execute etl.py to process the entire dataset. Run test.ipynb to confirm your records were successfully inserted into each table.
