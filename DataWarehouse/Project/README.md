@@ -16,7 +16,7 @@ Log Data JSON Path -->     s3://udacity-dend/log_json_path.json
 
 <b>Song Dataset</b>
 
-The first dataset is a subset of real data from the Million Song Dataset(https://labrosa.ee.columbia.edu/millionsong/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. 
+The first dataset is a subset of real data from the Million Song Dataset. Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.
 For example:
 
 song_data/A/B/C/TRABCEI128F424C983.json
@@ -33,10 +33,6 @@ For example:
 
 log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
-
-And below is an example of what a single log file, 2018-11-13-events.json, looks like.
-
-{"artist":"Pavement", "auth":"Logged In", "firstName":"Sylvie", "gender", "F", "itemInSession":0, "lastName":"Cruz", "length":99.16036, "level":"free", "location":"Klamath Falls, OR", "method":"PUT", "page":"NextSong", "registration":"1.541078e+12", "sessionId":345, "song":"Mercy:The Laundromat", "status":200, "ts":1541990258796, "userAgent":"Mozilla/5.0(Macintosh; Intel Mac OS X 10_9_4...)", "userId":10}
 
 <h2>Schema for Song Play Analysis</h2>
 
