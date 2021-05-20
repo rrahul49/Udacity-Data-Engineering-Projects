@@ -22,10 +22,6 @@ For example:
 song_data/A/B/C/TRABCEI128F424C983.json
 song_data/A/A/B/TRAABJL12903CDCF1A.json
 
-And below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.
-
-{"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
-
 <b>Log Dataset</b>
 
 The second dataset consists of log files in JSON format. The log files in the dataset with are partitioned by year and month.
