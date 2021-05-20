@@ -86,15 +86,12 @@ Project Template includes four files:
 <h2>Final Instructions</h2>
 
 1. Import all the necessary libraries
-2. Write the configuration of AWS Cluster, store the important parameter in some other file
+2. Write the configuration of AWS Cluster, store the important parameters in some other file such as dwh.cfg
 3. Configuration of boto3 which is an AWS SDK for Python
-4. Using the bucket, can check whether files log files and song data files are present
+4. Using the bucket, can check whether log files and song data files are present
 5. Create an IAM User Role, Assign appropriate permissions and create the Redshift Cluster
 6. Get the Value of Endpoint and Role for put into main configuration file
-7. Authorize Security Access Group to Default TCP/IP Address
-8. Launch database connectivity configuration
-9. Go to Terminal write the command "python create_tables.py" and then "etl.py"
-10. Should take around 4-10 minutes in total
-11. Then you go back to jupyter notebook to test everything is working fine
-12. I counted all the records in my tables
-13. Now can delete the cluster, roles and assigned permission
+7. Authorize Security Access Group to Default TCP/IP Address and launch database connectivity configuration
+8. Go to Terminal and execute scripts using the commands "python create_tables.py" and then "etl.py"
+9. Go back to jupyter notebook to test if everything is working fine
+10. Now can delete the cluster, roles and assigned permission
