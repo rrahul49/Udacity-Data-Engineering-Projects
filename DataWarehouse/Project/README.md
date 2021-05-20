@@ -1,14 +1,14 @@
-<b>Introduction</b>
+<h2>Introduction</h2>
 
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
 The task is to build an ETL Pipeline that extracts their data from S3, stages it in Redshift and then transforms the data into a set of dimensional and fact Tables for the analytics Team to continue finding Insights to what songs their users are listening to.
 
-<b>Project Description</b>
+<h2>Project Description</h2>
 
 Application of Data warehouse concepts and AWS to build an ETL Pipeline for a database hosted on Redshift. Data needs to be loaded from S3 into staging tables on Redshift and then SQL Statements that create fact and dimension tables from these staging tables to create analytics are executed.
 
-<b>Project Datasets</b>
+<h2>Project Datasets</h2>
 
 Song Data Path     -->     s3://udacity-dend/song_data
 Log Data Path      -->     s3://udacity-dend/log_data
@@ -38,7 +38,7 @@ And below is an example of what a single log file, 2018-11-13-events.json, looks
 
 {"artist":"Pavement", "auth":"Logged In", "firstName":"Sylvie", "gender", "F", "itemInSession":0, "lastName":"Cruz", "length":99.16036, "level":"free", "location":"Klamath Falls, OR", "method":"PUT", "page":"NextSong", "registration":"1.541078e+12", "sessionId":345, "song":"Mercy:The Laundromat", "status":200, "ts":1541990258796, "userAgent":"Mozilla/5.0(Macintosh; Intel Mac OS X 10_9_4...)", "userId":10}
 
-<b>Schema for Song Play Analysis</b>
+<h2>Schema for Song Play Analysis</h2>
 
 A Star Schema would be required for optimized queries on song play queries
 
@@ -61,9 +61,9 @@ artist_id, name, location, lattitude, longitude
 <b>time</b> - timestamps of records in songplays broken down into specific units
 start_time, hour, day, week, month, year, weekday
 
-<b>Project Template</b>
+<h2>Project Template</h2>
 
-Project Template include four files:
+Project Template includes four files:
 
 <b>1. create_table.py</b> is where you'll create your fact and dimension tables for the star schema in Redshift.
 
@@ -89,7 +89,7 @@ Project Template include four files:
 3. Test by running etl.py after running create_tables.py and running the analytic queries on your Redshift database to compare your results with the expected results.
 4. Delete your redshift cluster when finished.
 
-<b>Final Instructions</b>
+<h2>Final Instructions</h2>
 
 1. Import all the necessary libraries
 2. Write the configuration of AWS Cluster, store the important parameter in some other file
