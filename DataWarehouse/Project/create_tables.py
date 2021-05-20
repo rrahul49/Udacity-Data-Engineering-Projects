@@ -4,12 +4,18 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """ 
+    This function executes the sql statements to drop tables if they already exist
+    """
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def create_tables(cur, conn):
+    """
+    This function creates the fact and dimension tables for the star schema in Redshift
+    """
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()

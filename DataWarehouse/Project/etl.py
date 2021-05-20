@@ -4,12 +4,18 @@ from sql_queries import copy_table_queries, insert_table_queries
 
 
 def load_staging_tables(cur, conn):
+    """ 
+    This function loads data from S3 into staging tables on Redshift
+    """
     for query in copy_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def insert_tables(cur, conn):
+    """
+    This function processes the loaded data into the analytic tables on Redshift
+    """
     for query in insert_table_queries:
         cur.execute(query)
         conn.commit()
