@@ -11,7 +11,9 @@ Application of Data warehouse concepts and AWS to build an ETL Pipeline for a da
 <h2>Project Datasets</h2>
 
 Song Data Path     -->     s3://udacity-dend/song_data
+
 Log Data Path      -->     s3://udacity-dend/log_data
+
 Log Data JSON Path -->     s3://udacity-dend/log_json_path.json
 
 <b>Song Dataset</b>
