@@ -1,4 +1,4 @@
-<h1>Project:</h1> Data Pipeline with Airflow
+<h1>Project: Data Pipeline with Airflow</h1>
 
 <b>Introduction</b>
 
