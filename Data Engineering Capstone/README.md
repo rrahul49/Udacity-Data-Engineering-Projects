@@ -1,4 +1,4 @@
-# Data Engineering Capstone Project
+# Data Engineering Capstone
 
 ## Scope
 The purpose of this project is to develop an ETL pipeline using Airflow, constructing a data warehouse using AWS services such as Redshift and S3 aand defining an efficient data model.
