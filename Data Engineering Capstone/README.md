@@ -9,5 +9,16 @@ The purpose of this project is to develop an ETL pipeline using Airflow, constru
 - U.S. City Demographic Data: This dataset contains information about the demographics of all US cities and census-designated places with a population greater or equal to 65,000. Dataset comes from OpenSoft found [here](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/).
 - Airport Code Table: This is a simple table of airport codes and corresponding cities. The airport codes may refer to either IATA airport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the ICAO airport code which is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia). It comes from [here](https://datahub.io/core/airport-codes#data).
 
-Below is an ERD diagram of the immigration fact table and various dimension tables in a star schema
+Below is an ERD diagram of the immigration fact table and various dimension tables after extracting and creating the tables in Redshift
 <img src="Schema.PNG"/>
+
+## Data Storage
+Data was stored in S3 buckets in a collection of CSV and PARQUET files. The immigration dataset extends to several million rows and thus this dataset was converted to PARQUET files to allow for easy data manipulation and processing.<br><br>
+
+## ETL Pipeline
+Defining the data model and creating the star schema involves various steps. Using Airflow we extract files from S3 buckets, transform the data and then writing CSV and PARQUET files to Redshift as highlighted below in the ETL Dag graph. These steps include:
+- Extracting data from SAS Documents and writing as CSV files to S3 immigration bucket
+- Extracting remaining CSV and PARQUET files from S3 immigration bucket
+- Writing CSV and PARQUET files from S3 to Redshift
+- Performing data quality checks on the newly created tables
+<img src="DAG Treeview.PNG"/>
