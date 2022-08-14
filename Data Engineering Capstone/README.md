@@ -9,7 +9,7 @@ The purpose of this project is to develop an ETL pipeline using Airflow, constru
 - U.S. City Demographic Data: This dataset contains information about the demographics of all US cities and census-designated places with a population greater or equal to 65,000. Dataset comes from OpenSoft found [here](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/).
 - Airport Code Table: This is a simple table of airport codes and corresponding cities. The airport codes may refer to either IATA airport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the ICAO airport code which is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia). It comes from [here](https://datahub.io/core/airport-codes#data).
 
-Below is an ERD diagram of the immigration fact table and various dimension tables after extracting and creating the tables in Redshift
+Below is an ERD diagram of the immigration fact table and various dimension tables after extracting and creating the tables in Redshift (created using the tool DbSchema).
 <img src="Schema.PNG"/>
 
 ## ETL Pipeline
