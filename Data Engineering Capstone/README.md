@@ -21,5 +21,5 @@ Defining the data model and creating the star schema involves various steps. Usi
 - Extracting remaining CSV and PARQUET files from S3 immigration bucket
 - Writing CSV and PARQUET files from S3 to Redshift
 - Performing data quality checks on the newly created tables
-<img src="DAG Graphview.PNG"/>
-<img src="DAG Treeview.PNG"/>
+<img src="DAG_Graphview.png"/>
+<img src="DAG_Treeview.PNG"/>
