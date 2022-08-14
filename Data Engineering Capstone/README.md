@@ -14,7 +14,7 @@ Below is an ERD diagram of the immigration fact table and various dimension tabl
 
 ## ETL Pipeline
 Defining the data model and creating the star schema involves various steps. Using Airflow we extract files from S3 buckets, transform the data and then writing CSV and PARQUET files to Redshift as highlighted below in the ETL Dag graph and Tree views. These steps include:
-- Extracting data from SAS Documents and writing as CSV files to S3 immigration bucket
+- Extracting data from SAS Documents and writing as CSV files to S3 bucket
 - Extracting remaining CSV and PARQUET files from S3
 - Writing CSV and PARQUET files from S3 to Redshift
 - Performing data quality checks on the newly created tables
