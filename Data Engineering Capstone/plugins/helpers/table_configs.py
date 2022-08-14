@@ -1,30 +1,30 @@
-s3_keys = [
+csv_parquet_keys = [
   {'name': 'immigration',
    'key': 'sas_data',
    'file_format': 'parquet',
-   'sep': '',
+   'delim': '',
    'quality_check': []
   },
   {'name': 'us_cities_demographics',
    'key': 'data/us-cities-demographics.csv',
    'file_format': 'csv',
-   'sep': ';',
+   'delim': ';',
    'quality_check': []
   },
   {'name': 'airport_codes',
    'key': 'data/airport-codes_csv.csv',
    'file_format': 'csv',
-   'sep': ',',
+   'delim': ',',
    'quality_check': []
   },
   {'name': 'world_temperature',
    'key': 'data/GlobalLandTemperaturesByCity.csv',
    'file_format': 'csv',
-   'sep': ',',
+   'delim': ',',
    'quality_check': []
   },
 ]
-sas_data = [
+sas_keys = [
   {'name': 'i94cit_res',
    'value': 'i94cntyl',
    'columns': ['code', 'country'],
