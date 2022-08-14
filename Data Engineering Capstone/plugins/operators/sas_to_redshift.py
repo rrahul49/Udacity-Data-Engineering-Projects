@@ -10,10 +10,7 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 class SASToRedshiftOperator(BaseOperator):
-    """Custom Operator for extracting data from SAS.
-    Attributes:
-        ui_color (str): color code for task in Airflow UI.
-    """
+
     ui_color = '#358150'
 
     @apply_defaults
@@ -26,18 +23,7 @@ class SASToRedshiftOperator(BaseOperator):
                  sas_value="",
                  columns="",
                  *args, **kwargs):
-        """Extracts label mappings from SAS source code and store as Redshift table
-        Args:
-            aws_credentials_id (str): Airflow connection ID for AWS key and secret.
-            redshift_conn_id (str): Airflow connection ID for redshift database.
-            table (str): Name of table to load data to.
-            s3_bucket (str): S3 Bucket Name Where SAS source code is store.
-            s3_key (str): S3 Key Name for SAS source code.
-            sas_value (str): value to search for in sas file for extraction of data.
-            columns (list): resulting data column names.
-        Returns:
-            None
-        """
+
         super(SASToRedshiftOperator, self).__init__(*args, **kwargs)
         self.aws_credentials_id = aws_credentials_id
         self.redshift_conn_id = redshift_conn_id
@@ -48,12 +34,7 @@ class SASToRedshiftOperator(BaseOperator):
         self.columns = columns
 
     def execute(self, context):
-        """Executes task for staging to redshift.
-        Args:
-            context (:obj:`dict`): Dict with values to apply on content.
-        Returns:
-            None
-        """
+
         s3 = S3Hook(self.aws_credentials_id)
 
         redshift_conn = BaseHook.get_connection(self.redshift_conn_id)
@@ -95,10 +76,10 @@ class SASToRedshiftOperator(BaseOperator):
                 codes.append(code)
                 values.append(val)
 
-        self.log.info('Converting parsed data to dataframe...')
+        self.log.info('Converting parsed data to pandas dataframe')
         df = pd.DataFrame(list(zip(codes,values)), columns=self.columns)
 
-        self.log.info(f'Truncating table: {self.table}')
+        self.log.info(f'Truncate table: {self.table}')
         truncate_query = text(f'TRUNCATE TABLE {self.table}')
         conn.execution_options(autocommit=True).execute(truncate_query)
 

@@ -3,13 +3,7 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 class DataQualityOperator(BaseOperator):
-    """Custom Operator for performing data quality check on a table.
 
-    Attributes:
-        ui_color (str): color code for task in Airflow UI.
-        count_template (str): template string for checking if table contains data.
-
-    """
     ui_color = '#89DA59'
     count_template = """
                      SELECT COUNT(*)
@@ -21,8 +15,7 @@ class DataQualityOperator(BaseOperator):
                  table="",
                  quality_check=[],
                  *args, **kwargs):
-        """Initializes a Data Quality Check Operator.
-        Args:
+        """Args:
             redshift_conn_id (str): Airflow connection ID for redshift database.
             table (str): Name of table to quality check.
             query (:obj:`str`, optional): Query use for testing table quality.
@@ -34,11 +27,7 @@ class DataQualityOperator(BaseOperator):
         self.quality_check = quality_check
 
     def execute(self, context):
-        """Executes task for data quality check.
-        Args:
-            context (:obj:`dict`): Dict with values to apply on content.
 
-        """
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
 
         self.log.info(f'Fetching Record count from {self.table}...')
