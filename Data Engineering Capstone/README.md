@@ -1,10 +1,10 @@
 # Data Engineering Capstone
 
 ## Scope
-The purpose of this project is to develop an ETL pipeline using Airflow, constructing a data warehouse using AWS services such as Redshift and S3 aand defining an efficient data model. In this case we will be using US immigration, demographics,airport and World temperature data to find patterns driving immigration and it's impact such as temperature and gender. We can also use this data to find immigration traffic patterns and categorize them accordingly.
+For the Data Engineering capstone project I have created a data pipeline which creates a database containing information about immigration into the US. This database can then be queried for the corresponding information and is hosted on Amazon Redshift. The orchestration/implementation is then done using Apache Airflow. The scope of this project is limited to the datsets listed in the below section. The primary focus is on the type of visas being issued and the profiles associated with the data at an aggregation level across features such as visa type, gender, port of entry,etc.
 
 ## Datasets
-- I94 Immigration Data: This data comes from the US National Tourism and Trade Office found [here](https://travel.trade.gov/research/reports/i94/historical/2016.html).
+- I94 Immigration Data: This data comes from the US National Tourism and Trade Office found [here](https://travel.trade.gov/research/reports/i94/historical/2016.html).Each report contains international visitor arrival statistics by world regions and select countries, type of visa, mode of transportation, age groups, states visited (first intended address only), and the top ports of entry
 - World Temperature Data: This dataset came from Kaggle found [here](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data).
 - U.S. City Demographic Data: This dataset comes from OpenSoft found [here](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/).
 - Airport Code Table: This is a simple table of airport codes and corresponding cities. It comes from [here](https://datahub.io/core/airport-codes#data).
