@@ -10,4 +10,4 @@ The purpose of this project is to develop an ETL pipeline using Airflow, constru
 - Airport Code Table: This is a simple table of airport codes and corresponding cities. The airport codes may refer to either IATA airport code, a three-letter code which is used in passenger reservation, ticketing and baggage-handling systems, or the ICAO airport code which is a four letter code used by ATC systems and for airports that do not have an IATA airport code (from wikipedia). It comes from [here](https://datahub.io/core/airport-codes#data).
 
 Below is an ERD diagram of the immigration fact table and various dimension tables in a star schema
-<img src="SCHEMA.PNG"/>
+<img src="Schema.PNG"/>
