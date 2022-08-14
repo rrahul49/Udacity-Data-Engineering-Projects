@@ -21,6 +21,11 @@ Defining the data model and creating the star schema involves various steps. Usi
 <img src="DAG_Graphview.png"/>
 <img src="DAG_Treeview.PNG"/>
 
+## Technology Choices and Tools
+1. Apache Airflow: Airflow allows for easy automation and monitoring of etl pipelines in order to keep an analytics database up to date. It also provides helpful graphical visibility into the various steps in the process.
+2. Amazon Redshift: Redshift is a massively parallel distributed data source that is ideal for storing data required for analytics usage.
+
+
 ## Conclusion
 This project covers the following steps involved in developing a data warehouse:
 * Creating a Redshift Cluster, IAM Roles, Security groups.
