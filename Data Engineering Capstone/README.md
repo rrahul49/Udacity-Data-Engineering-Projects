@@ -32,7 +32,7 @@ Data should be updated monthly as the immigration dataset is at a monthly level
 * **The data was increased by 100x:** If the data increases by 100x then I would look towards using EMR and spark to handle it.
 * **The data populates a dashboard that must be updated on a daily basis by 7am every day.** The schedule of the DAG would have to be updated correspondingly to staisfy this daily requirement of having up to date data for the dashboard.
 
-* The database needed to be accessed by 100+ people.** Since the data is already on a massively parallel data warehouse such as Redshift, I would look into using role-based access control (RBAC) as per AWS's recent announcement [here](https://aws.amazon.com/about-aws/whats-new/2022/04/amazon-redshift-role-based-access-control/) to control end user access to data at a broad or granular level based on their job role/permission rights and level of data sensitivity.
+* The database needed to be accessed by 100+ people.** Since the data is already on a massively parallel data warehouse such as Redshift, I would look into using role-based access control (RBAC) as per AWS's recent [announcement](https://aws.amazon.com/about-aws/whats-new/2022/04/amazon-redshift-role-based-access-control/) to control end user access to data at a broad or granular level based on their job role/permission rights and level of data sensitivity.
 
 ## Conclusion
 This project covers the following steps involved in developing a data warehouse:
