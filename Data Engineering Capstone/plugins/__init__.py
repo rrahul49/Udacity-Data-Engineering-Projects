@@ -14,6 +14,6 @@ class UdacityPlugin(AirflowPlugin):
         operators.DataQualityOperator
     ]
     helpers = [
-        helpers.sas_data,
-        helpers.s3_keys
+        helpers.sas_keys,
+        helpers.csv_parquet_keys
     ]
