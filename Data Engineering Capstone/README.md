@@ -1,7 +1,7 @@
 # Data Engineering Capstone
 
 ## Scope
-The purpose of this project is to develop an ETL pipeline using Airflow, constructing a data warehouse using AWS services such as Redshift and S3 aand defining an efficient data model.
+The purpose of this project is to develop an ETL pipeline using Airflow, constructing a data warehouse using AWS services such as Redshift and S3 aand defining an efficient data model. In this case we will be using US immigration, demographics,airport and World temperature data to find patterns driving immigration and it's impact such as temperature and gender. We can also use this data to find immigration traffic patterns and categorize them accordingly.
 
 ## Datasets
 - I94 Immigration Data: This data comes from the US National Tourism and Trade Office found [here](https://travel.trade.gov/research/reports/i94/historical/2016.html).
