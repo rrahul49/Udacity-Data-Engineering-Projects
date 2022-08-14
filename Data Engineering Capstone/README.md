@@ -11,6 +11,8 @@ For the Data Engineering capstone project I have created a data pipeline which c
 
 ## Data Model
 Below is an ERD diagram of the immigration fact table and various dimension tables in a star schema after extracting and creating the tables in Redshift (created using the tool DbSchema).
+* In immigration table i94mon column is used as a DISTKEY AND i94year as SORTKEY
+* The following tables are distributed across all nodes(DISTSTYLE ALL): us_cities_demographics, i94cit_res, i94port, i94mode, i94addr, i94visa
 <img src="Schema.PNG"/>
 
 ## ETL Pipeline
