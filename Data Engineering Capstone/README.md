@@ -23,3 +23,11 @@ Defining the data model and creating the star schema involves various steps. Usi
 - Performing data quality checks on the newly created tables
 <img src="DAG_Graphview.png"/>
 <img src="DAG_Treeview.PNG"/>
+
+## Conclusion
+This project covers the following steps involved in developing a data warehouse:
+* Creating a Redshift Cluster, IAM Roles, Security groups.
+* Developing an ETL Pipeline that copies data from S3 buckets into staging tables to be processed into a star schema on Redshift
+* Using Airflow to automate ETL pipelines.
+* Custom operators to perform tasks such as creating database objects, staging data, filling the data warehouse, and validation through data quality checks.
+* Transforming data from various sources into a star schema.
