@@ -25,6 +25,14 @@ Defining the data model and creating the star schema involves various steps. Usi
 1. Apache Airflow: Airflow allows for easy automation and monitoring of etl pipelines in order to keep an analytics database up to date. It also provides helpful graphical visibility into the various steps in the process.
 2. Amazon Redshift: Redshift is a massively parallel distributed data source that is ideal for storing data required for analytics usage.
 
+## Data Update Schedule
+Data should be updated monthly as the immigration dataset is at a monthly level
+
+## Alternative Scenarios
+* **The data was increased by 100x:** If the data increases by 100x then I would look towards using EMR and spark to handle it.
+* **The data populates a dashboard that must be updated on a daily basis by 7am every day.** The schedule of the DAG would have to be updated correspondingly to staisfy this daily requirement of having up to date data for the dashboard.
+
+* The database needed to be accessed by 100+ people.** Since the data is already on a massively parallel data warehouse such as Redshift, I would look into using role-based access control (RBAC) as per AWS's recent announcement [here](https://aws.amazon.com/about-aws/whats-new/2022/04/amazon-redshift-role-based-access-control/) to control end user access to data at a broad or granular level based on their job role/permission rights and level of data sensitivity.
 
 ## Conclusion
 This project covers the following steps involved in developing a data warehouse:
