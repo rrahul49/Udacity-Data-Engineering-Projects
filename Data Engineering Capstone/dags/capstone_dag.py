@@ -17,8 +17,8 @@ from helpers import create_tables
 config = configparser.ConfigParser()
 config.read('dwh.cfg')
 
-#REDSHIFT_ARN = config['CLUSTER']['ARN']
-#S3_BUCKET = config['S3']['BUCKET']
+REDSHIFT_ARN = config['CLUSTER']['ARN']
+S3_BUCKET = config['S3']['BUCKET']
 
 
 default_args = {
@@ -122,7 +122,7 @@ for table in s3_keys:
     dag=dag,
     aws_credentials_id='aws_credentials',
     redshift_conn_id='redshift',
-    role_arn='arn:aws:iam::903477318840:role/RedshiftAdminCustom',
+    role_arn=REDSHIFT_ARN,
     table=table['name'],
     s3_bucket='udacity-capstone-rr',
     s3_key=table['key'],
