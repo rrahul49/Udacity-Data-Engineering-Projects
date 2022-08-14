@@ -2,12 +2,6 @@ import os
 import configparser
 from datetime import datetime, timedelta
 
-from pyspark.sql import SparkSession
-from pyspark.sql.types import DateType
-import pyspark.sql.functions as F
-from pyspark.sql.functions import udf, rand
-from pyspark.sql.functions import isnan, when, count, col
-
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 
