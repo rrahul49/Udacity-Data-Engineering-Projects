@@ -10,7 +10,7 @@ from airflow.operators.postgres_operator import PostgresOperator
 
 from operators import (CopyToRedshiftOperator, SASToRedshiftOperator, DataQualityOperator)
 
-from helpers import sas_data, s3_keys
+from helpers import sas_keys, csv_parquet_keys
 from helpers import create_tables
 
 
@@ -18,7 +18,7 @@ config = configparser.ConfigParser()
 config.read('dwh.cfg')
 
 REDSHIFT_ARN = config['CLUSTER']['ARN']
-S3_BUCKET = config['S3']['BUCKET']
+#S3_BUCKET = config['S3']['BUCKET']
 
 
 default_args = {
@@ -116,9 +116,9 @@ start_operator >> [create_immigration_table,create_us_cities_demographics_table,
  create_i94cit_res_table,create_i94port_table,create_i94mode_table,
  create_i94addr_table,create_i94visa_table] >> load_operator
 
-for table in s3_keys:
+for table in csv_parquet_keys:
   copy_from_s3_task = CopyToRedshiftOperator(
-    task_id=f'copy_{table["name"]}_from_s3',
+    task_id=f'load_{table["name"]}_from_s3',
     dag=dag,
     aws_credentials_id='aws_credentials',
     redshift_conn_id='redshift',
@@ -127,11 +127,11 @@ for table in s3_keys:
     s3_bucket='udacity-capstone-rr',
     s3_key=table['key'],
     file_format=table['file_format'],
-    delimiter=table['sep']
+    delimiter=table['delim']
   )
 
   check_task = DataQualityOperator(
-    task_id=f'quality_check_{table["name"]}_table',
+    task_id=f'check_{table["name"]}_table',
     dag=dag,
     redshift_conn_id='redshift',
     table=table['name'],
@@ -143,9 +143,9 @@ for table in s3_keys:
   check_task >> end_operator
 
 
-for table in sas_data:
+for table in sas_keys:
   load_from_sas_task = SASToRedshiftOperator(
-    task_id=f'load_{table["name"]}_from_sas_source_code',
+    task_id=f'Process_{table["name"]}_from_sas_file',
     dag=dag,
     aws_credentials_id='aws_credentials',
     redshift_conn_id='redshift',
@@ -157,7 +157,7 @@ for table in sas_data:
   )
 
   check_task = DataQualityOperator(
-    task_id=f'quality_check_{table["name"]}_table',
+    task_id=f'check_{table["name"]}_table',
     dag=dag,
     redshift_conn_id='redshift',
     table=table['name'],
